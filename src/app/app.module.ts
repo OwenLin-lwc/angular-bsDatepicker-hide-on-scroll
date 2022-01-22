@@ -7,6 +7,7 @@ import { HelloComponent } from './hello.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DatepickerModalComponent } from './datepicker-modal/datepicker-modal.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
   ],
-  declarations: [AppComponent, HelloComponent],
+  declarations: [AppComponent, HelloComponent, DatepickerModalComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
