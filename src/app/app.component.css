@@ -5,3 +5,7 @@ p {
 .modal-body {
   min-height: 200vh;
 }
+
+.btn {
+  margin: 5px;
+}
