@@ -18,13 +18,16 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
   modalRef: BsModalRef;
   bsModalRef: BsModalRef;
-  @ViewChild(BsDatepickerDirective, { static: false })
-  datepicker: BsDatepickerDirective;
 
-  constructor(private modalService: BsModalService) {}
+  constructor(private modalService: BsModalService) {
+    window.addEventListener('scroll', this.hideDialog, true);
+  }
 
-  @HostListener('window:scroll') onScrollEvent() {
-    this.datepicker.hide();
+  hideDialog(): void {
+    const d = document.querySelector('bs-datepicker-container');
+    if (d) {
+      d.remove();
+    }
   }
 
   openModal(template: TemplateRef<any>) {

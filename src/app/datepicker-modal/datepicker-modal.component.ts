@@ -11,11 +11,13 @@ export class DatepickerModalComponent implements OnInit {
   @ViewChild(BsDatepickerDirective, { static: false })
   datepicker: BsDatepickerDirective;
 
-  constructor(public bsModalRef: BsModalRef) {}
+  constructor(public bsModalRef: BsModalRef) {
+    window.addEventListener('scroll', this.hideDialog, true);
+  }
 
   ngOnInit() {}
 
-  @HostListener('window:scroll') onScrollEvent() {
+  hideDialog(): void {
     this.datepicker.hide();
   }
 }
